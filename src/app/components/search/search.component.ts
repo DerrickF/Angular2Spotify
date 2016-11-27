@@ -19,7 +19,6 @@ export class SearchComponent {
         if (this.searchStr.length > 3) {
             this._spotifyService.searchMusic(this.searchStr)
                 .subscribe(res => {
-                    console.log(res.artists.items);
                     this.searchRes = res.artists.items;
                 })
         }

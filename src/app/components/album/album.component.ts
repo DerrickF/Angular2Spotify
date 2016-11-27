@@ -24,6 +24,7 @@ export class AlbumComponent {
             this._spotifyService.getAlbum(id)
             .subscribe(album => {
                 this.album = album;
+                console.log("this album info: ", album);
             })
             
         })

@@ -21,7 +21,15 @@
         <div *ngFor="let track of album.tracks.items">
             <div class="well">
                 <h5>{{track.track_number}} - {{track.name}}</h5>
-                <a href="{{track.preview_url}}" target="_blank">Preview Track</a>
+                <div *ngIf="track.preview_url != null">
+                    <audio controls="controls">
+                        <source src="{{track.preview_url}}" type="audio/mpeg">
+                    </audio>
+                </div>
+                <div *ngIf="track.preview_url == null">
+                    <p>Preview not supported for this track</p>
+                </div>
+                <!--<a href="{{track.preview_url}}" target="_blank">Preview Track</a>-->
             </div>    
         </div>
     </div>
