@@ -8,20 +8,36 @@
             Genres: <span *ngFor="let genre of artist.genres">{{genre}}</span>
         </p>
     </header>
-    <div class="artist-albums">
-        <div class="row">
-            <div *ngFor="let album of albums">
-                <div class="col-md-3">
-                    <div class="well album">
-                        <div *ngIf="album.images.length > 0">
-                            <img class="album-thumb img-thumbnail" src="{{album.images[0].url}}" alt="">
-                            <h4>{{album.name}}</h4>
-                            <a class="btn btn-default btn-block" routerLink="/album/{{album.id}}">Album Detials</a>
+    <div class="row">
+        <div class="artist-albums">
+            <div class="row">
+                <div *ngFor="let album of albums">
+                    <div class="col-md-3">
+                        <div class="well album">
+                            <div *ngIf="album.images.length > 0">
+                                <img class="album-thumb img-thumbnail" src="{{album.images[0].url}}" alt="">
+                                <h4>{{album.name}}</h4>
+                                <a class="btn btn-default btn-block" routerLink="/album/{{album.id}}">Album Detials</a>
+                            </div>
                         </div>
                     </div>
                 </div>
-
+            </div>
+        </div>
+        <div class="contianer" id="relatedArtists">
+            <div class="row">
+                <div *ngFor="let relatedArtist of relatedArtists | slice:0:3; let i=index">
+                    <div class="col-md-4">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <img class="img-circle img-responsive" style="padding:20px 20px" src="{{relatedArtist.images[0].url}}">
+                            </div>
+                            <div class="col-md-6">
+                                <h4>{{relatedArtist.name}}</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-</div>
