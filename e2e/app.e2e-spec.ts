@@ -1,10 +1,10 @@
-import { AngularSpotifyPage } from './app.po';
+import { AngualrSpotifyUpdatePage } from './app.po';
 
-describe('angular-spotify App', function() {
-  let page: AngularSpotifyPage;
+describe('angualr-spotify-update App', () => {
+  let page: AngualrSpotifyUpdatePage;
 
   beforeEach(() => {
-    page = new AngularSpotifyPage();
+    page = new AngualrSpotifyUpdatePage();
   });
 
   it('should display message saying app works', () => {

@@ -1,6 +1,6 @@
 import { browser, element, by } from 'protractor';
 
-export class AngularSpotifyPage {
+export class AngualrSpotifyUpdatePage {
   navigateTo() {
     return browser.get('/');
   }
